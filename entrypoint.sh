@@ -19,8 +19,8 @@ export AIRFLOW__CORE__SQL_ALCHEMY_CONN=${AIRFLOW__CORE__SQL_ALCHEMY_CONN:-postgr
 export AIRFLOW__CORE__LOAD_EXAMPLES="False"
 
 # Install custom python package if requirements.txt is present
-if [ -e "${AIRFLOW_HOME}/dags/requirements.txt" ]; then
-    pip install -r "${AIRFLOW_HOME}/dags/requirements.txt"
+if [ -e "${AIRFLOW_HOME}/dags/airflow-dags/requirements.txt" ]; then
+    pip install -r "${AIRFLOW_HOME}/airflow-dags/dags/requirements.txt"
 fi
 
 ### init airflow db
