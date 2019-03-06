@@ -20,7 +20,7 @@ export AIRFLOW__CORE__LOAD_EXAMPLES="False"
 
 # Install custom python package if requirements.txt is present
 if [ -e "${AIRFLOW_HOME}/dags/airflow-dags/requirements.txt" ]; then
-    pip install -r "${AIRFLOW_HOME}/airflow-dags/dags/requirements.txt"
+    pip install -r "${AIRFLOW_HOME}/dags/airflow-dags/requirements.txt"
 fi
 
 ### init airflow db
