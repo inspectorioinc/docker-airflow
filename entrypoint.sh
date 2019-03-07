@@ -24,7 +24,7 @@ if [ -e "${AIRFLOW_HOME}/dags/airflow-dags/requirements.txt" ]; then
 fi
 
 ### init airflow db
-runuser -l app -c 'airflow initdb'
+runuser app -p -c 'airflow initdb'
 
 ### reconfigure supervisor conf
 envsubst < /etc/supervisor/conf.d/webserver.conf | sponge /etc/supervisor/conf.d/webserver.conf
