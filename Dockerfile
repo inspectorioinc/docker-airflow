@@ -20,7 +20,8 @@ ENV LC_MESSAGES C.UTF-8
 
 COPY config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 
-RUN pip install apache-airflow[crypto,jdbc,kubernetes,postgres,s3,slack,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
+# hadolint ignore=DL3013
+RUN pip install apache-airflow[crypto,jdbc,kubernetes,postgres,s3,slack,sendgrid,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
 &&  if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
 &&  chown -R "${APP_USER}":"${APP_GRP}" "${AIRFLOW_HOME}"
 
